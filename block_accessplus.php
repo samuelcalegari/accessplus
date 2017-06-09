@@ -2,6 +2,9 @@
 
 class block_accessplus extends block_base
 {
+    CONST JS_URL = '/blocks/accessplus/js/main.js';
+    CONST CSS_URL = '/blocks/accessplus/styles/main.css';
+
     public function init()
     {
         $this->title = get_string('accessplus', 'block_accessplus');
@@ -14,9 +17,33 @@ class block_accessplus extends block_base
         }
 
         $this->content         =  new stdClass;
-        $this->content->text   = 'The content of our SimpleHTML block!';
-        $this->content->footer = 'Footer here...';
+
+        $content = '';
+        $content .= html_writer::tag(
+            'a',
+            'A-',
+            array(  'title' => get_string('btn_decrease', 'block_accessplus'),
+                    'class' => 'btn',
+                    'id' => "block_accessplus_decrease_font")
+        );
+        $content .= html_writer::tag(
+            'a',
+            'A+',
+            array(  'title' => get_string('btn_increase', 'block_accessplus'),
+                'class' => 'btn',
+                'id' => "block_accessplus_increase_font")
+        );
+
+        $this->content->text   = $content;
+        $this->page->requires->jquery();
+        $this->page->requires->js(self::JS_URL, false);
+
+        $this->page->requires->css(self::CSS_URL);
 
         return $this->content;
+    }
+
+    public function instance_allow_multiple(){
+        return false;
     }
 }
