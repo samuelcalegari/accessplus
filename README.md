@@ -1,5 +1,9 @@
 # Accessibility Block for Moodle #
 
+## Current version ##
+
+alpha-0.1.0
+
 ## Features ##
 - Theme selection
 - increase and decrease font
