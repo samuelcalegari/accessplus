@@ -36,7 +36,11 @@ class block_accessplus extends block_base
         );
 
         $content .= html_writer::select(
-            ['bw' => get_string('black-white', 'block_accessplus'),'wb' => get_string('white-black', 'block_accessplus')],
+            [
+                'bw' => get_string('black-white', 'block_accessplus'),
+                'wb' => get_string('white-black', 'block_accessplus'),
+                'soviet' => get_string('soviet', 'block_accessplus')
+            ],
             '_block_accessplus_theme_picker'
         );
 
