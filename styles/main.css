@@ -1,3 +1,11 @@
 #block_accessplus_decrease_font {
     margin-right: 5px;
 }
+
+#block_accessplus_increase_font {
+    margin-right: 5px;
+}
+
+.userpicture {
+    z-index: 9999;
+}
