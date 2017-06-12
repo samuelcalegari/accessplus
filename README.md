@@ -6,7 +6,7 @@ alpha-0.1.0
 
 ## Features ##
 - Theme selection
-- increase and decrease font
+- Increase and decrease font
 
 ## Supported languages ##
 - english
@@ -14,7 +14,7 @@ alpha-0.1.0
 
 ## Installation ##
 
-copy file into directory /blocks/accesplus/ and visit /admin/index.php in your browser
+Copy files into the following directory **/blocks/accesplus/** and visit **/admin/index.php** in your browser
 
 ## Requirement ##
 
