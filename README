@@ -1,0 +1,17 @@
+##Accessibility Block for Moodle
+
+**features**
+- Theme selection
+- increase and decrease font
+
+**supported languages**
+- english
+- french
+
+**Installation**
+
+copy file into directory /blocks/accesplus/ and visit /admin/index.php in your browser
+
+**Licence**
+
+Released MIT Licence
