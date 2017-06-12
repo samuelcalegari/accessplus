@@ -8,7 +8,7 @@ const resizeText = function (multiplier) {
 
 const changeTheme = function (theme) {
 
-    let elements = ['body', '.block', 'header', 'footer', 'div', 'ul', 'li', 'nav', 'input', 'a', 'h1', 'h2', 'h3'];
+    let elements = ['body', '.block', 'header', 'footer', 'div', 'ul', 'li', 'nav', 'input', 'select', 'a', 'h1', 'h2', 'h3'];
 
     elements.forEach(e => {
         $(e).css('background-color', theme.backgroundColor);
