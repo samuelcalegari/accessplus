@@ -22,7 +22,7 @@ Moodle 3.1 or greater.
 
 ## Other infos ##
 
-Use Jquery and ES6 Features
+Use Jquery and ES6 Features.
 
 ## Licence ##
 
