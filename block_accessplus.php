@@ -2,8 +2,8 @@
 
 class block_accessplus extends block_base
 {
-    CONST JS_URL = '/blocks/accessplus/js/main.js';
-    CONST CSS_URL = '/blocks/accessplus/styles/main.css';
+    CONST JS = '/blocks/accessplus/js/main.js';
+    CONST CSS = '/blocks/accessplus/styles/main.css';
 
     public function init()
     {
@@ -46,9 +46,9 @@ class block_accessplus extends block_base
 
         $this->content->text   = $content;
         $this->page->requires->jquery();
-        $this->page->requires->js(self::JS_URL, false);
+        $this->page->requires->js(self::JS, false);
 
-        $this->page->requires->css(self::CSS_URL);
+        $this->page->requires->css(self::CSS);
 
         return $this->content;
     }
