@@ -6,14 +6,14 @@ const resizeText = function (multiplier) {
     document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
 }
 
-const changeTheme = function (textColor, backgroundColor) {
+const changeTheme = function (theme) {
 
     let elements = ['body', '.block', 'header', 'footer', 'div', 'ul', 'li', 'nav', 'input', 'a', 'h1', 'h2', 'h3'];
 
     elements.forEach(e => {
-        $(e).css('background-color', backgroundColor);
+        $(e).css('background-color', theme.backgroundColor);
         $(e).css('background-image', 'none');
-        $(e).css('color', textColor);
+        $(e).css('color', theme.textColor);
         $(e).css('text-shadow', 'none');
     });
 }
@@ -28,6 +28,30 @@ $(function () {
         resizeText(1);
     })
 
-    changeTheme('#fff', '#000');
-    changeTheme('#000', '#fff');
+    $('#menu_block_accessplus_theme_picker').on('change', function () {
+        const theme = {};
+        switch (this.value) {
+            case 'bw' : {
+                theme.backgroundColor = '#000';
+                theme.textColor = '#fff';
+                break;
+            }
+            case 'wb' : {
+                theme.backgroundColor = '#fff';
+                theme.textColor = '#000';
+                break;
+            }
+            case 'soviet' : {
+                theme.backgroundColor = '#f00';
+                theme.textColor = '#ff0';
+                break;
+            }
+            default : {
+                theme.backgroundColor = '#000';
+                theme.textColor = '#fff';
+            }
+        }
+
+        changeTheme(theme);
+    })
 });

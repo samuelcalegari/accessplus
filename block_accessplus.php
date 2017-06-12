@@ -26,12 +26,18 @@ class block_accessplus extends block_base
                     'class' => 'btn',
                     'id' => "block_accessplus_decrease_font")
         );
+
         $content .= html_writer::tag(
             'a',
             'A+',
             array(  'title' => get_string('btn_increase', 'block_accessplus'),
                 'class' => 'btn',
                 'id' => "block_accessplus_increase_font")
+        );
+
+        $content .= html_writer::select(
+            ['bw' => get_string('black-white', 'block_accessplus'),'wb' => get_string('white-black', 'block_accessplus')],
+            '_block_accessplus_theme_picker'
         );
 
         $this->content->text   = $content;

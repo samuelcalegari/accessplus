@@ -9,3 +9,7 @@
 .userpicture {
     z-index: 9999;
 }
+
+#menutheme_picker {
+    padding-top:5px;
+}
