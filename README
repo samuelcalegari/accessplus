@@ -1,25 +1,25 @@
-# Accessibility Block for Moodle
+# Accessibility Block for Moodle #
 
 ## Features
 - Theme selection
 - increase and decrease font
 
-## Supported languages
+## Supported languages ##
 - english
 - french
 
-## Installation
+## Installation ##
 
 copy file into directory /blocks/accesplus/ and visit /admin/index.php in your browser
 
-## Requirement
+## Requirement ##
 
 Moodle 3.1 or greater.
 
-## Other infos
+## Other infos ##
 
 Use Jquery and ES6 Features
 
-## Licence
+## Licence ##
 
 Released under the [MIT Licence](https://opensource.org/licenses/MIT)
