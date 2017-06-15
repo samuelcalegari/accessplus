@@ -6,11 +6,11 @@ const resizeText = function (multiplier) {
     document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
 }
 
-const getsizeText = function(){
+const getsizeText = function () {
     return document.body.style.fontSize;
 }
 
-const setsizeText = function(size){
+const setsizeText = function (size) {
     document.body.style.fontSize = size;
 }
 
@@ -63,10 +63,22 @@ $(function () {
         changeTheme(theme);
     })
 
-    $("#block_accessplus_save_params").on('click', function(){
+    $("#block_accessplus_save_params").on('click', function () {
         getsizeText();
         $.get(accesPlus.mroot + '/blocks/accessplus/save.php' +
-        '?theme=' + $('#menu_block_accessplus_theme_picker').val() +
-        '&fontsize=' + getsizeText() );
+            '?theme=' + $('#menu_block_accessplus_theme_picker').val() +
+            '&fontsize=' + getsizeText());
     })
+
+    $.getJSON(accesPlus.mroot + '/blocks/accessplus/get.php', function (config) {
+
+        if (config.fontsize != "") {
+            document.body.style.fontSize = config.fontsize
+        }
+
+        if (config.theme != "") {
+            $('#menu_block_accessplus_theme_picker').val(config.theme);
+            $('#menu_block_accessplus_theme_picker').trigger('change')
+        }
+    });
 });
