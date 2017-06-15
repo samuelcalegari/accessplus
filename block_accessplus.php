@@ -1,5 +1,4 @@
 <?php
-
 class block_accessplus extends block_base
 {
     CONST JS = '/blocks/accessplus/js/main.js';
@@ -11,6 +10,8 @@ class block_accessplus extends block_base
     }
 
     public function get_content() {
+
+        global $CFG;
 
         if ($this->content !== null) {
             return $this->content;
@@ -35,6 +36,14 @@ class block_accessplus extends block_base
                 'id' => "block_accessplus_increase_font")
         );
 
+        $content .= html_writer::tag(
+            'a',
+            'S',
+            array(  'title' => get_string('btn_save', 'block_accessplus'),
+                'class' => 'btn',
+                'id' => "block_accessplus_save_params")
+        );
+
         $content .= html_writer::select(
             [
                 'bw' => get_string('black-white', 'block_accessplus'),
@@ -43,6 +52,8 @@ class block_accessplus extends block_base
             ],
             '_block_accessplus_theme_picker'
         );
+
+        $content .= '<script type="text/javascript">const accesPlus = { mroot : "' . $CFG->wwwroot . '"}</script>';
 
         $this->content->text   = $content;
         $this->page->requires->jquery();

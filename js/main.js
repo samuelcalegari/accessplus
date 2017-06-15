@@ -6,6 +6,14 @@ const resizeText = function (multiplier) {
     document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
 }
 
+const getsizeText = function(){
+    return document.body.style.fontSize;
+}
+
+const setsizeText = function(size){
+    document.body.style.fontSize = size;
+}
+
 const changeTheme = function (theme) {
 
     let elements = ['body', '.block', 'header', 'footer', 'div', 'ul', 'li', 'nav', 'input', 'select', 'a', 'h1', 'h2', 'h3'];
@@ -53,5 +61,12 @@ $(function () {
         }
 
         changeTheme(theme);
+    })
+
+    $("#block_accessplus_save_params").on('click', function(){
+        getsizeText();
+        $.get(accesPlus.mroot + '/blocks/accessplus/save.php' +
+        '?theme=' + $('#menu_block_accessplus_theme_picker').val() +
+        '&fontsize=' + getsizeText() );
     })
 });

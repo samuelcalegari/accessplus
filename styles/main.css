@@ -1,8 +1,4 @@
-#block_accessplus_decrease_font {
-    margin-right: 5px;
-}
-
-#block_accessplus_increase_font {
+#block_accessplus_decrease_font, #block_accessplus_increase_font, #block_accessplus_save_params {
     margin-right: 5px;
 }
 

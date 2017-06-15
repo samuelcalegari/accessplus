@@ -2,7 +2,7 @@
 
 ## Current version ##
 
-alpha-0.1.0
+alpha-0.1.1
 
 ## Features ##
 - Theme selection
