@@ -2,7 +2,6 @@
 class block_accessplus extends block_base
 {
     CONST JS = '/blocks/accessplus/js/main.js';
-    CONST CSS = '/blocks/accessplus/styles/main.css';
 
     public function init()
     {
@@ -20,6 +19,7 @@ class block_accessplus extends block_base
         $this->content         =  new stdClass;
 
         $content = '';
+
         $content .= html_writer::tag(
             'a',
             'A-',
@@ -38,9 +38,17 @@ class block_accessplus extends block_base
 
         $content .= html_writer::tag(
             'a',
-            'S',
-            array(  'title' => get_string('btn_save', 'block_accessplus'),
+            'R',
+            array(  'title' => get_string('btn_reset', 'block_accessplus'),
                 'class' => 'btn',
+                'id' => "block_accessplus_reset")
+        );
+
+        $content .= html_writer::tag(
+            'a',
+            get_string('btn_save', 'block_accessplus'),
+            array(  'title' => get_string('btn_save', 'block_accessplus'),
+                'class' => 'acces_plus_keep',
                 'id' => "block_accessplus_save_params")
         );
 
@@ -58,9 +66,6 @@ class block_accessplus extends block_base
         $this->content->text   = $content;
         $this->page->requires->jquery();
         $this->page->requires->js(self::JS, false);
-
-        $this->page->requires->css(self::CSS);
-
         return $this->content;
     }
 

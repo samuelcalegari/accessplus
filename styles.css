@@ -1,0 +1,17 @@
+#block_accessplus_decrease_font, #block_accessplus_increase_font, #block_accessplus_save_params, #block_accessplus_reset {
+    margin-right: 5px;
+}
+
+#menu_block_accessplus_theme_picker {
+    margin-top:10px;
+}
+
+#block_accessplus_save_params {
+    background:url('[[pix:block_accessplus|save-icon]]') no-repeat;
+    display:inline-block;
+    text-indent:-9999px;
+    height:30px;
+    width:30px;
+    cursor: pointer;
+    margin-left: 10px;
+}

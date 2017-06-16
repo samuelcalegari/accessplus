@@ -19,11 +19,18 @@ const changeTheme = function (theme) {
     let elements = ['body', '.block', 'header', 'footer', 'div', 'ul', 'li', 'nav', 'input', 'select', 'a', 'h1', 'h2', 'h3'];
 
     elements.forEach(e => {
-        $(e).css('background-color', theme.backgroundColor);
-        $(e).css('background-image', 'none');
-        $(e).css('color', theme.textColor);
-        $(e).css('text-shadow', 'none');
+
+        $(e).not('.acces_plus_keep')
+            .css('background-color', theme.backgroundColor)
+            .css('background-image', 'none')
+            .css('color', theme.textColor)
+            .css('text-shadow', 'none')
     });
+
+
+    $('#block_accessplus_save_params')
+        .css('-webkit-filter', 'invert(' + (theme.invert | 0) + ')')
+        .css('filter', 'invert(' + (theme.invert | 0) + ')');
 }
 
 $(function () {
@@ -42,11 +49,13 @@ $(function () {
             case 'bw' : {
                 theme.backgroundColor = '#000';
                 theme.textColor = '#fff';
+                theme.invert = true;
                 break;
             }
             case 'wb' : {
                 theme.backgroundColor = '#fff';
                 theme.textColor = '#000';
+                theme.invert = false;
                 break;
             }
             case 'soviet' : {
@@ -68,6 +77,13 @@ $(function () {
         $.get(accesPlus.mroot + '/blocks/accessplus/save.php' +
             '?theme=' + $('#menu_block_accessplus_theme_picker').val() +
             '&fontsize=' + getsizeText());
+    })
+
+    $("#block_accessplus_reset").on('click', function () {
+        getsizeText();
+        $.get(accesPlus.mroot + '/blocks/accessplus/save.php?theme=none&fontsize=none', function(){
+            location.reload();
+        });
     })
 
     $.getJSON(accesPlus.mroot + '/blocks/accessplus/get.php', function (config) {

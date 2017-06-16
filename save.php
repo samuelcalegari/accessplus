@@ -7,8 +7,8 @@ $fontsize = required_param('fontsize', PARAM_TEXT);
 
 if ($data = $DB->get_record('block_accessplus', array('userid' => $USER->id))) {
 
-    $data->fontsize = $fontsize;
-    $data->theme = $theme;
+    $data->fontsize = ($fontize=='none') ? '' : $fontize;
+    $data->theme = ($theme =='none') ? '' : $theme ;
     $DB->update_record('block_accessplus', $data);
 
 } else {
