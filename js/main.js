@@ -81,7 +81,7 @@ $(function () {
 
     $("#block_accessplus_reset").on('click', function () {
         getsizeText();
-        $.get(accesPlus.mroot + '/blocks/accessplus/save.php?theme=none&fontsize=none', function(){
+        $.get(accesPlus.mroot + '/blocks/accessplus/save.php?theme=none&fontsize=none', function () {
             location.reload();
         });
     })
